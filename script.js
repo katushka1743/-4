@@ -6,6 +6,8 @@ const btn1 = document.getElementById('btn1')
 const inp2 = document.getElementById('inp2');
 const btn2 = document.getElementById('btn2')
 
+
+
 out.innerHTML = '';
     list.forEach(element => {
         if (element.toLowerCase().includes(inp1.value.toLowerCase())) {
@@ -29,8 +31,12 @@ btn1.addEventListener('click', ()=> {
 })
 
 btn2.addEventListener('click', () => {
-    list.push(inp2.value);
-    inp2.value = '';
+    if (inp2.value.trim() !== '') {
+        list.push(inp2.value);
+        inp2.value = '';
+    } else {
+        alert('Необходимо что-то ввести!');
+    }
     out.innerHTML = '';
     list.forEach(element => {
         if (element.toLowerCase().includes(inp1.value.toLowerCase())) {
