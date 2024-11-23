@@ -35,7 +35,8 @@ btn2.addEventListener('click', () => {
         list.push(inp2.value);
         inp2.value = '';
     } else {
-        alert('Необходимо что-то ввести!');
+        error1 = document.getElementById('error1')
+        error1.innerText = 'Необходимо что-то ввести!'
     }
     out.innerHTML = '';
     list.forEach(element => {
